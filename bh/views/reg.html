@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/reg.css">
+</head>
+<body>
+    {{include './header.html'}}
+
+    <!-- 主体 -->
+    <div class="container">
+        <h1>注册</h1>
+        <!-- <form class="l" method="post" action="/adduser">
+            <input type="text" placeholder="请输入昵称" name="uname">
+            <input type="password" placeholder="请输入密码" name="pwd">
+            <input type="button" value="注册" id=""> 
+        </form> -->
+        <div class="l">
+            <input type="text" placeholder="请输入昵称" id="uname">
+            <input type="password" placeholder="请输入密码" id="pwd">
+            <input type="button" value="注册" id="register"> 
+        </div>
+        <div class="r">
+            <p>请妥善保存您本站的账号及登录密码。</p>
+            <p>请勿和其他网站使用相同的登录密码。</p>
+            <br>
+            <p>已有账号？去 <a href="/login">登录</a></p>
+        </div>
+    </div>
+    <!-- 主体结束 -->
+
+    {{include './footer.html'}}
+
+</body>
+<script>
+    $("#register").click(()=>{
+        let uname = $("#uname").val();
+        let pwd = $("#pwd").val();
+
+        if(uname == ""){
+            alert("未填写用户名!!");
+        }else{
+            if(pwd == ""){
+                alert("未填写密码!!");
+            }else{
+                $.ajax({
+                    url:"/adduser",
+                    method:"post",
+                    data:{uname,pwd},
+                    success:(res)=>{
+                        alert(res);
+                        window.location.href="/login";
+                    },
+                    error:(msg)=>{
+                        console.log(msg);
+                    }  
+                })    
+            }
+        }  
+    })
+    
+
+</script>
+</html>

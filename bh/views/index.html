@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{webname}}</title>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
+</head>
+
+<body> 
+    {{include './header.html' $islogin}}    
+    <!-- 主体 -->
+    <div class="container">
+        <div class="leftmenu">
+            <a href="" class="cur">最新文章</a>
+            <a href="">热门资讯</a>
+            <a href="">收藏排行</a>
+        </div>
+        <div class="r">
+            <ul>
+                {{each list}}
+                <li>
+                    <div class="top">
+                        <img src="images/touxiang.png" alt="">
+                        <p>{{$value.uid.uname}}</p>
+                        <p>{{$value.ct}}</p>
+                    </div>
+                    <img src="{{$value.thumb}}">
+                    <h3><a href="/news/{{$value.id}}">{{$value.title}}</a></h3>
+                    <p class="desc">{{$value.content}}</p>
+                    <p class="bot">
+                        <i class="iconfont icon-zan"></i>
+                        6666
+                    </p>
+                </li>
+                {{/each}}
+            </ul>
+
+            <div class="pagelist">
+                {{each pagelistarr}}
+                    {{if $value == curpage}}
+                        <span>{{$value}}</span>
+                        {{else}}
+                            <a href="/pagelist/{{$value}}">{{$value}}</a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <!-- r end -->
+    
+    </div>
+    <!-- 主体结束 -->
+    {{include './footer.html'}}
+</body>
+</html>

@@ -1,0 +1,62 @@
+@import 'header.less';
+@import 'footer.less';
+@import 'base.less';
+
+.container {
+    width: 900px;
+    margin: 0 auto; // padding: 40px 30px;
+    margin-top: 100px;
+    margin-bottom: 130px; // box-sizing: border-box;
+    overflow: hidden;
+    h1 {
+        color: @wcolor;
+        font-size: 36px;
+        line-height: 1.5em;
+        font-weight: 400;
+        margin-bottom: 70px;
+    }
+    .l {
+        float: left;
+        width: 395px;
+        input[type=text],
+        input[type=password] {
+            width: 393px;
+            height: 40px;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 35px;
+            background: white;
+            text-indent: 10px;
+            font-size: 14px;
+            color: #333;
+            .ph;
+            &:focus {
+                border: 1px solid @gblue;
+                box-shadow: 0 0.313rem 0.719rem rgba(0, 123, 255, 0.1), 0 0.156rem 0.125rem rgba(0, 0, 0, 0.06);
+            }
+        } // input end
+        input[type=button] {
+            background: @gblue;
+            color: white;
+            display: block;
+            border-radius: 4px;
+            border: none;
+            height: 40px;
+            width: 395px;
+            cursor: pointer;
+        }
+    } // .l end
+    .r {
+        width: 365px;
+        float: right;
+        p {
+            color: @wcolor;
+            margin-bottom: 10px;
+            font-size: 14px;
+            a {
+                font-size: 14px;
+                color: @gblue;
+            }
+        }
+    } // .r end
+} // container end

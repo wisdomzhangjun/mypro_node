@@ -1,0 +1,138 @@
+// 头部
+#header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #EDF0F4;
+    background: white;
+    .center {
+        width: 1000px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        position: relative;
+        .logo {
+            float: left;
+            height: 46px;
+        }
+        .index {
+            color: @wcolor;
+            line-height: 60px;
+            padding: 0 20px;
+            margin-left: 50px;
+        }
+        form {
+            width: 450px;
+            height: 32px;
+            display: block;
+            background: #F3F3F3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 16px;
+            input {
+                width: 400px;
+                margin-left: 20px;
+                height: 16px;
+                border: none;
+                background: #F3F3F3;
+                font-size: 13px;
+                .ph;
+                &:focus{
+                    outline: none;
+                }
+            }
+            i {
+                margin-right: 10px;
+                color: #999;
+            }
+        } // form end
+        .r {
+            width: 120px;
+            height: 40px;
+            float: right;
+            border: 1px solid @gblue;
+            position: absolute;
+            top: 9px;
+            right: 0;
+            border-radius: 20px;
+            display: flex;
+            color: @gblue;
+            justify-content: center;
+            align-items: center;
+            .tran;
+            i {
+                color: @gblue;
+                font-size: 20px;
+                .tran;
+            }
+            &:hover {
+                background: @gblue;
+                color: white;
+                i {
+                    color: white;
+                }
+            }
+        } // r end
+        .logreg {
+            margin-left: 15px;
+            a {
+                display: block;
+                float: left;
+                line-height: 60px;
+                color: @wcolor;
+                padding: 0 20px;
+                &:hover {
+                    color: @gblue;
+                }
+            }
+        } // 已登录
+        .avatars {
+            width: 80px;
+            height: 60px; // background: pink;
+            margin-left: 60px;
+            position: relative;
+            &:hover {
+                .bot {
+                    display: block;
+                }
+            }
+            .top {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+            .bot {
+                display: none;
+                width: 110px;
+                background: white;
+                position: absolute;
+                top: 60px;
+                left: -15px;
+                box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.175);
+                border-radius: 6px;
+                overflow: hidden;
+                padding: 10px 0;
+                a {
+                    display: block;
+                    text-align: center;
+                    height: 40px;
+                    line-height: 40px;
+                    color: @wcolor;
+                    background: white;
+                    &:hover {
+                        color: @gblue;
+                    }
+                }
+            }
+        } // 已登录结束
+    } // .center end
+}
+// 头部结束

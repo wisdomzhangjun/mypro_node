@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/reg.css">
+</head>
+
+<body>
+
+    {{include './header.html'}}
+
+    <!-- 主体 -->
+    <div class="container">
+        <h1>登录</h1>
+        <!-- <form class="l" method="POST" action="/logcheck">
+            <input type="text" placeholder="请输入账号" name="uname">
+            <input type="password" placeholder="请输入密码" name="pwd">
+            <input type="submit" value="登录">
+        </form> -->
+        <div class="l">
+            <input type="text" placeholder="请输入昵称" id="uname">
+            <input type="password" placeholder="请输入密码" id="pwd">
+            <input type="button" value="登录" id="login"> 
+        </div>
+        <div class="r">
+            <p>还不是本站的用户？</p>
+            <p>马上注册，掌握一手资讯。</p>
+            <br>
+            <p><a href="/reg">免费注册</a></p>
+        </div>
+    </div>
+    <!-- 主体结束 -->
+
+    {{include './footer.html'}}
+
+</body>
+<script>
+
+    $("#login").click(()=>{
+        let uname = $("#uname").val();
+        let pwd = $("#pwd").val();
+
+        if(uname == ""){
+            alert("未填写用户名!!");
+        }else{
+            if(pwd == ""){
+                alert("未填写密码!!");
+            }else{
+                $.ajax({
+                    url:"/logcheck",
+                    method:"post",
+                    data:{uname,pwd},
+                    success:(res)=>{
+                        alert(res);
+                        if(res == "登陆成功"){
+                            window.location.href="/";
+                        }else{
+                            window.location.href="/login";
+                        }
+                    },
+                    error:(msg)=>{
+                        console.log(msg);
+                    }  
+                })
+            }
+        }   
+    })
+</script>
+</html>

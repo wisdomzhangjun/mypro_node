@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/msg.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        {{msg}}<span>5</span>秒后{{backreg}}。
+    </div>
+    <div id="gif">
+        <img src="/images/ds-1.gif" />
+        <div>{{result}}</div>
+    </div>
+    <div id="png">
+        <img src="/images/ds-2.png" />
+    </div>
+    <script type="text/javascript">
+        var span,timer = null;
+        span = document.getElementsByTagName("span")[0];
+        timer = setInterval(function(){
+            //获取旧值
+            var oldcon = span.innerHTML;
+            //设置新值
+            var newcon = oldcon - 1;
+            //赋值
+            span.innerHTML = newcon; 	
+            if(newcon == 0){
+                clearInterval(timer);
+                location.href = "/addarticleshow";
+            }
+        },1000)
+    </script>
+</body>
+</html>

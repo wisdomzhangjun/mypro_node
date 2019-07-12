@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>发表文章</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/simditor.css" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/module.js"></script>
+    <script type="text/javascript" src="/js/hotkeys.js"></script>
+    <script type="text/javascript" src="/js/uploader.js"></script>
+    <script type="text/javascript" src="/js/simditor.js"></script>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/addarticle.css">
+
+</head>
+
+<body>
+
+    {{include './header.html' $islogin}}
+
+    <!-- 主体 -->
+    <div class="container">
+
+        <form action="/updateart" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="aid" value="{{aid}}">
+            <input type="text" class="title" placeholder="标题" name="title" value="{{data.title}}">
+
+            <textarea id="editor" placeholder="<p>请输入文章内容</p>" autofocus name="content">{{data.content}}</textarea>
+            <script>
+                var editor = new Simditor({
+                    textarea: $('#editor')
+                });
+            </script>
+            <br/>
+            <input type="file" value="请上传缩略图" name="thumb">
+            <br/>
+            <input type="submit" value="发表">
+
+        </form>
+
+    </div>
+    <!-- 主体结束 -->
+
+    {{include './footer.html'}}
+
+</body>
+</html>

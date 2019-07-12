@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: 微软雅黑;
+}
+body {
+  background: #F6F8F9;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.tran {
+  transition: all 0.2s;
+}
+.ph::-webkit-input-placeholder {
+  color: #BCC7D7;
+}
+.ph::-moz-placeholder {
+  color: #BCC7D7;
+}
+.ph::-moz-placeholder {
+  color: #BCC7D7;
+}
+.ph::-ms-input-placeholder {
+  color: #BCC7D7;
+}

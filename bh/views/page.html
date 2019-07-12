@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/page.css">
+    <script src="/js/page.js"></script>
+</head>
+
+<body>
+
+    {{include './header.html' $islogin}}   
+
+    <!-- 主体 -->
+    <div class="container">
+        <h1>{{date.title}}</h1>
+        <div class="user">
+            <img src="/images/touxiang.png" alt="">
+            <p>{{date.uid.uname}}</p>
+            <p>{{date.ct}}</p>
+        </div>
+        <div class="content">
+            {{@ date.content}}
+        </div>
+
+        <div class="star {{iscollection}}">
+            <i class="iconfont icon-star"></i>
+            <p><span>已 </span>收 藏</p>
+        </div>
+
+        <script>
+            var aid = "{{aid}}";
+        </script>
+
+    </div>
+    <!-- 主体结束 -->
+
+   {{include './footer.html'}}
+
+</body>
+
+</html>

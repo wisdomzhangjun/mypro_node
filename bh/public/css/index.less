@@ -1,0 +1,132 @@
+@import 'header.less';
+@import 'footer.less';
+@import 'base.less';
+
+
+// 主体
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px; // border: 1px solid blue;
+    overflow: hidden;
+    .leftmenu {
+        width: 120px;
+        float: left;
+        a {
+            font-size: 14px;
+            display: block;
+            height: 40px;
+            color: #3b4651;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            .tran;
+            &.cur {
+                background: @gblue;
+                color: white;
+            }
+            &:hover {
+                background: @gblue;
+                color: white;
+            }
+        }
+    } // leftmenu end
+    .r {
+        overflow: hidden;
+        width: 850px;
+        float: right;
+        >ul {
+            background: white;
+            li {
+                border-bottom: 1px solid #F6F8F9;
+                padding: 20px 30px 30px;
+                box-sizing: border-box;
+                margin: 0 auto;
+                overflow: hidden;
+                .top {
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    img {
+                        float: left;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        margin-right: 12px;
+                    }
+                    p:nth-of-type(1) {
+                        color: @wcolor;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                    p:nth-of-type(2) {
+                        color: #ccc;
+                        font-size: 12px;
+                        line-height: 20px;
+                    }
+                } // top end
+                >img {
+                    width: 232px;
+                    height: 128px;
+                    float: left;
+                    margin-right: 30px;
+                }
+                h3 {
+                    a {
+                        color: #212529;
+                        font-size: 20px;
+                        line-height: 26px;
+                        font-weight: 400;
+                        display: block;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                         
+                    }
+                    height: 26px;
+                    margin-bottom: 10px;
+                }
+                .desc {
+                    color: #999;
+                    line-height: 20px;
+                    font-size: 13px;
+                    height: 128-10-26-20px;
+                }
+                .bot {
+                    height: 20px;
+                    line-height: 20px;
+                    color: #c5c5c5;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        margin-right: 3px;
+                    }
+                }
+            } // li end
+        } // ul end
+        .pagelist {
+            margin-top: 20px;
+            background: white;
+            overflow: hidden;
+            padding: 20px 20px 20px;
+            box-sizing: border-box;
+            span,
+            a {
+                display: block;
+                float: left;
+                margin-right: 5px;
+                padding: 3px 10px;
+                color: @wcolor;
+                border-radius: 3px;
+                margin-right: 10px;
+            }
+            span {
+                background: @gblue;
+                color: white;
+            }
+        }
+    } // .r end
+}
+
+// 主体结束
